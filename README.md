@@ -78,42 +78,41 @@ Busca produto por ID.
 
 ### Criando produtos (POST)
 
-prints/post-criar-produto.png
-prints/post-criar-produto2.png
-prints/post-criar-produto3.png
-prints/post-criar-produto4.png
-prints/post-criar-produto5.png
+![POST1](prints/post-criar-produto.png)  
+![POST2](prints/post-criar-produto2.png)  
+![POST3](prints/post-criar-produto3.png)  
+![POST4](prints/post-criar-produto4.png)  
+![POST5](prints/post-criar-produto5.png)
 
 ---
 
 ### Listar produtos
 
-prints/get-listar-produtos.png
+![GET](prints/get-listar-produtos.png)
 
 ---
 
 ### Buscar produto por ID
 
-prints/get-produto-id.png
+![GET ID](prints/get-produto-id.png)
 
 ---
 
 ### Filtro por categoria
 
-prints/get-produto-categoria.png
+![Filtro](prints/get-produto-categoria.png)
 
 ---
 
 ### Ordenação
 
-prints/get-produto-ordenacao.png
+![Ordenação](prints/get-produto-ordenacao.png)
 
 ---
 
 ### Paginação
 
-prints/get-produto-paginacao.png
-
+![Paginação](prints/get-produto-paginacao.png)
 ---
 
 ## Collection do Postman
