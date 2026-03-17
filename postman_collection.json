@@ -1,0 +1,173 @@
+{
+  "info": {
+    "_postman_id": "8f1a59f4-0ba7-4903-8c45-21d1c65fe662",
+    "name": "Trabalho01-API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "53281581",
+    "_collection_link": "https://go.postman.co/collection/53281581-8f1a59f4-0ba7-4903-8c45-21d1c65fe662?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Criar Produto",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"nome\": \"Teclado\",\r\n  \"preco\": 200,\r\n  \"categoria\": \"Informática\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:80/api/produtos",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "80",
+          "path": [
+            "api",
+            "produtos"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Listar Produtos",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:80/api/produtos",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "80",
+          "path": [
+            "api",
+            "produtos"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Buscar Produto por ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:80/api/produtos/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "80",
+          "path": [
+            "api",
+            "produtos",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Buscar Produto por Categoria",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:80/api/produtos?categoria=Informática",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "80",
+          "path": [
+            "api",
+            "produtos"
+          ],
+          "query": [
+            {
+              "key": "categoria",
+              "value": "Informática"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Buscar Produto com Ordenação",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:80/api/produtos?ordem=preco&direcao=desc",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "80",
+          "path": [
+            "api",
+            "produtos"
+          ],
+          "query": [
+            {
+              "key": "ordem",
+              "value": "preco"
+            },
+            {
+              "key": "direcao",
+              "value": "desc"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Buscar Produto por Paginação",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:80/api/produtos?pagina=1&limite=2",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "80",
+          "path": [
+            "api",
+            "produtos"
+          ],
+          "query": [
+            {
+              "key": "pagina",
+              "value": "1"
+            },
+            {
+              "key": "limite",
+              "value": "2"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
