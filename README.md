@@ -21,7 +21,7 @@ Permite criar, listar, filtrar, ordenar e paginar produtos.
 
 ### POST /api/produtos
 
-Cria um novo produto.
+Cria um novo produto na API.
 
 #### Body (JSON):
 
@@ -33,7 +33,13 @@ Cria um novo produto.
 }
 ```
 
-#### Resposta:
+#### Campos:
+
+* `nome` (string) → Nome do produto
+* `preco` (number) → Valor do produto (deve ser maior que 0)
+* `categoria` (string) → Categoria do produto
+
+#### Resposta (201):
 
 ```json
 {
@@ -44,35 +50,83 @@ Cria um novo produto.
 }
 ```
 
-#### Validações:
+#### Possíveis erros:
 
-* Nome obrigatório
-* Preço deve ser um número maior que 0
-* Categoria obrigatória
+* 400 → Nome não informado
+* 400 → Preço inválido
+* 400 → Categoria não informada
 
 ---
 
 ### GET /api/produtos
 
-Lista produtos com filtros, ordenação e paginação.
+Retorna uma lista de produtos com suporte a filtros, ordenação e paginação.
 
-#### Parâmetros:
+#### Parâmetros de query:
 
-* categoria
-* preco_min
-* preco_max
-* ordem (preco ou nome)
-* direcao (asc ou desc)
-* pagina
-* limite
+* `categoria` → Filtra por categoria
+* `preco_min` → Preço mínimo
+* `preco_max` → Preço máximo
+* `ordem` → Campo de ordenação (`preco` ou `nome`)
+* `direcao` → Direção (`asc` ou `desc`)
+* `pagina` → Número da página
+* `limite` → Quantidade de itens por página
+
+#### Exemplo de requisição:
+
+```
+/api/produtos?categoria=Informática&preco_max=500&ordem=preco&direcao=desc&pagina=1&limite=2
+```
+
+#### Resposta:
+
+```json
+{
+  "dados": [
+    {
+      "id": 2,
+      "nome": "Mouse",
+      "preco": 150,
+      "categoria": "Informática"
+    }
+  ],
+  "paginacao": {
+    "pagina_atual": 1,
+    "itens_por_pagina": 2,
+    "total_itens": 5,
+    "total_paginas": 3
+  }
+}
+```
 
 ---
 
 ### GET /api/produtos/:id
 
-Busca produto por ID.
+Retorna um produto específico com base no ID.
 
----
+#### Exemplo:
+
+```
+/api/produtos/1
+```
+
+#### Resposta:
+
+```json
+{
+  "id": 1,
+  "nome": "Notebook",
+  "preco": 3500,
+  "categoria": "Informática"
+}
+```
+
+#### Possíveis erros:
+
+* 404 → Produto não encontrado
+* 400 → ID inválido
+
 
 ## Testes no Postman
 
