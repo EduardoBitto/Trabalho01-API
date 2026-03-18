@@ -158,13 +158,13 @@ Retorna um produto específico com base no ID.
 
 ---
 
-### Ordenação
+### Filtro por Ordenação
 
 ![Ordenação](prints/get-produto-ordenacao.png)
 
 ---
 
-### Paginação
+### Filtro por Paginação
 
 ![Paginação](prints/get-produto-paginacao.png)
 ---
